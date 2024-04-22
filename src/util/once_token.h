@@ -12,8 +12,8 @@ namespace uitl
         template <typename Func>
         OnceToken(const Func& on_constructed, Task on_destructed = nullptr)
         {
-            on_constructed();
-            on_destructed = std::move(on_destructed);
+            // on_constructed();
+            // on_destructed = std::move(on_destructed);
         }
 
         OnceToken(std::nullopt_t, Task on_destructed = nullptr)

@@ -40,10 +40,10 @@ namespace net
                 {
                     std::string name = pool_name + ' ' + std::to_string(index);
                     SetPriority(priority);
-                    SetThreadName(name.data());
+                    util::SetThreadName(name.data());
 
                     if (set_affinity)
-                        SetThreadAffinity(index % std::thread::hardware_concurrency());
+                        util::SetThreadAffinity(index % std::thread::hardware_concurrency());
                 };
                 if (auto_run) Start();
         }

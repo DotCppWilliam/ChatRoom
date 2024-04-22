@@ -27,12 +27,12 @@ namespace logging
         { util::Ftime(&time_); }
 
 
-        Record(Severity severity, const char* message) 
-            : logging::Record()
-        { 
-            severity_ = severity;
-            message_ << message; 
-        }
+        // Record(Severity severity, const char* message) 
+        //     : logging::Record()
+        // { 
+        //     severity_ = severity;
+        //     message_ << message; 
+        // }
 
         Record(Severity severity, const char* format, ...) 
             : logging::Record()

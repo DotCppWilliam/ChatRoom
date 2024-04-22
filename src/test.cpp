@@ -19,8 +19,8 @@ using namespace std;
 int main()
 {
     logging::Init(logging::Severity::fatal);
-    LOG_FMT_DEBUG_MSG("你好 %d", 1);
-    LOG_FMT_WARNING_MSG("你好 %d", 1);
+    LOG_FATAL_MSG("尝试将自身加入到 thread_group 中");
+    LOG_FMT_ERROR_MSG("你好%d [%s]\n", 1, "aa");
     
     return 0;
 }

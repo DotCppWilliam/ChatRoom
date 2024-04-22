@@ -1,6 +1,7 @@
 #pragma once
 
 #include "log.h"
+#include "record.h"
 #include "severity.h"
 
 #include <memory>
