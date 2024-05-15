@@ -1,6 +1,6 @@
 #pragma once
 
-#include "concurrent_queue_default_traits.h"
+#include "default_traits.h"
 #include "details.h"
 #include "producer_base.h"
 #include "block.h"

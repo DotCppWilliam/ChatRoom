@@ -5,7 +5,7 @@
 #include <array>
 
 #include "details.h"
-#include "concurrent_queue_default_traits.h"
+#include "default_traits.h"
 
 template <typename T>struct ExplicitProducer;
 template <typename T> struct ImplicitProducer;

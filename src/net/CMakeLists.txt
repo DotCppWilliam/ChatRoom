@@ -10,4 +10,4 @@ set(SOURCES
 
 add_library(Net STATIC ${SOURCES})
 target_include_directories(Net PUBLIC ${HEADER_DIR})
-target_link_libraries(Net PRIVATE Log)
+target_link_libraries(Net PRIVATE Log ConQueue)
