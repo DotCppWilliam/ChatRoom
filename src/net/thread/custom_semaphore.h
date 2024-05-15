@@ -14,12 +14,21 @@ namespace net
         ~Semaphore()
         {  sem_destroy(&sem_); }
 
+        /**
+         * @brief 递增信号量
+         * 
+         * @param n 
+         */
         void Post(size_t n = 1)
         {
             while (n--) 
                 sem_post(&sem_);
         }
         
+        /**
+         * @brief 等待信号量
+         * 
+         */
         void Wait()
         { sem_wait(&sem_); }
     private:
