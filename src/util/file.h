@@ -1,6 +1,7 @@
 #pragma once
 
 #include "noncopyable.h"
+#include "status.h"
 
 #include <cstddef>
 #include <string>
@@ -8,6 +9,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <vector>
 
 namespace util
 {
@@ -69,6 +71,17 @@ namespace util
         {
             return ::rename(old_filename.c_str(), new_filename.c_str());
         }
+
+        static Status GetContent(const std::string &filename, std::string &cont);
+        static Status WriteContent(const std::string &filename, const std::string &cont);
+        static Status RenameSave(const std::string &name, const std::string &tmpName, const std::string &cont);
+        static Status GetChildren(const std::string &dir, std::vector<std::string> *result);
+        static Status DeleteFile(const std::string &fname);
+        static Status CreateDir(const std::string &name);
+        static Status DeleteDir(const std::string &name);
+        static Status GetFileSize(const std::string &fname, uint64_t *size);
+        static Status RenameFile(const std::string &src, const std::string &target);
+        static bool FileExists(const std::string &fname);
     private:
         int file_;
     };

@@ -1,13 +1,6 @@
-set(HEADER_DIR
-    "${CMAKE_CURRENT_LIST_DIR}/poller"
-    "${CMAKE_CURRENT_LIST_DIR}/thread"
-)
+set(NET_DIRS ${CMAKE_CURRENT_LIST_DIR})
+aux_source_directory(. NET_SOURCES)
 
-set(SOURCES 
-    "${CMAKE_CURRENT_LIST_DIR}/thread/task_executor.cpp"
-)
-
-
-add_library(Net STATIC ${SOURCES})
-target_include_directories(Net PUBLIC ${HEADER_DIR})
-target_link_libraries(Net PRIVATE Log ConQueue)
+add_library(Net STATIC ${NET_SOURCES})
+target_include_directories(Net PUBLIC ${NET_DIRS})
+target_link_libraries(Net PUBLIC Util Log Conqueue)

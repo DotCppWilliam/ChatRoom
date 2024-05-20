@@ -11,7 +11,7 @@ target_include_directories(Log PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/formatters
     ${CMAKE_CURRENT_LIST_DIR}/helpers)
     
-target_link_libraries(Log PRIVATE Util)
+target_link_libraries(Log PUBLIC Util)
 
 
 
